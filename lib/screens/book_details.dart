@@ -4,8 +4,6 @@ import '../theme/theme.dart';
 import 'components/display_text.dart';
 import 'components/primary_button.dart';
 import 'components/secondary_button.dart';
-import 'components/edit_details.dart';
-import 'home.dart';
 
 class BookDetails extends StatefulWidget {
   BookDetails({super.key,});
