@@ -1,6 +1,13 @@
+// ignore_for_file: avoid_print
+
+import 'dart:convert';
+import 'dart:ffi';
+
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+
 import '../models/personal_book.dart';
+
 class PersonalBookDatabase {
   static const String _tableName = "bookTable";
   static const String _id = "id";
@@ -38,6 +45,7 @@ class PersonalBookDatabase {
 
     if (book.id == null) {
       print("CREATING ${book.googleBook.title}");
+      print("O ID do livro é: ${book.id}");
       await database.insert(_tableName, bookMap);
     } else {
       print("UPDATING ${book.googleBook.title}");
@@ -83,6 +91,7 @@ class PersonalBookDatabase {
 
   Future<void> delete(PersonalBook book) async {
     print("DELETE");
+    print("O ID do livro é: ${book.id}");
 
     final Database database = await _getDatabase();
 
@@ -106,4 +115,4 @@ class PersonalBookDatabase {
 
 class PersonalBookNotFindException implements Exception {}
 
-
+// These below are just examples. Need to create new models

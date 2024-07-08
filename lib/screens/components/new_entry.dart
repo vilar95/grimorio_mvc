@@ -8,9 +8,9 @@ import '../../theme/theme.dart';
 import '../home.dart';
 
 class NewEntry extends StatefulWidget {
-   NewEntry({
+  NewEntry({
     super.key,
-    required  this.googleBook,
+    required this.googleBook,
   });
 
   GoogleBook googleBook;
@@ -87,8 +87,12 @@ class _NewEntryState extends State<NewEntry> {
                                   text: "Adicionar",
                                   onTap: () {
                                     // Needs add book logic
-                                    bookController.addBook(  widget.googleBook,
-                                        initialDateController.text, finalDateController.text, commentsController.text);
+                                    bookController.addBook(
+                                      widget.googleBook,
+                                      initialDateController.text,
+                                      finalDateController.text,
+                                      commentsController.text,
+                                    );
                                     Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(

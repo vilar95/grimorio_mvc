@@ -16,7 +16,8 @@ class PersonalBook {
       required this.googleBook,
       id});
 
-  PersonalBook.fromMap(Map<String, dynamic> map) : id = map["id"],
+  PersonalBook.fromMap(Map<String, dynamic> map) : 
+  id = map["id"],
   dayStarted = map["dayStarted"],
   dayFinished = map["dayFinished"],
   comments = map["comments"],

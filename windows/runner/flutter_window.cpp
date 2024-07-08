@@ -31,10 +31,7 @@ bool FlutterWindow::OnCreate() {
     this->Show();
   });
 
-  return true;
-}
-
-void FlutterWindow::OnDestroy() {
+  // Flutter can complete the firOnDestroy() {
   if (flutter_controller_) {
     flutter_controller_ = nullptr;
   }
