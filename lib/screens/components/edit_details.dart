@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:grimorio/controller/book_controller.dart';
+import 'package:grimorio/models/personal_book.dart';
 import 'package:grimorio/screens/components/date_input.dart';
 import 'package:grimorio/screens/components/entry.dart';
-
-import '../../models/personal_book.dart';
-import '../../theme/theme.dart';
+import 'package:grimorio/screens/components/primary_button.dart';
+import 'package:grimorio/theme/theme.dart';
 import 'display_text.dart';
-import 'primary_button.dart';
 
+// ignore: must_be_immutable
 class EditDetails extends StatefulWidget {
   EditDetails({super.key, required this.personalBook});
 
@@ -22,11 +22,13 @@ class _EditDetailsState extends State<EditDetails> {
   final TextEditingController initialDateController = TextEditingController();
   final TextEditingController finalDateController = TextEditingController();
   final TextEditingController commentsController = TextEditingController();
+
   final BookController bookController = BookController();
+
   @override
   void initState() {
     super.initState();
-    //Fill with personalBook info
+    // Fill with book info
     if (widget.personalBook.comments != "") {
       commentsController.text = widget.personalBook.comments;
     }
@@ -95,18 +97,15 @@ class _EditDetailsState extends State<EditDetails> {
                                   onTap: () {
                                     final PersonalBook newPersonalBook =
                                         PersonalBook(
-                                            dayStarted:
-                                                initialDateController.text,
-                                            dayFinished:
-                                                finalDateController.text,
-                                            comments: commentsController.text,
-                                            googleBook:
-                                                widget.personalBook.googleBook,
-                                            id: widget.personalBook.id);
-                                    
+                                      dayStarted: initialDateController.text,
+                                      dayFinished: finalDateController.text,
+                                      comments: commentsController.text,
+                                      googleBook:
+                                          widget.personalBook.googleBook,
+                                      id: widget.personalBook.id,
+                                    );
                                     bookController.updateBook(newPersonalBook);
-
-                                    Navigator.pop(context, newPersonalBook); 
+                                    Navigator.pop(context, newPersonalBook);
                                   }),
                             ),
                           ],

@@ -62,7 +62,7 @@ class _SearchBooksState extends State<SearchBooks> {
 }
 
 class _BooksList extends StatelessWidget {
-  const _BooksList({super.key, required this.future});
+  const _BooksList({required this.future});
 
   // Need to change list type
   final Future<List<GoogleBook>>? future;

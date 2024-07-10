@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grimorio/theme/theme.dart';
 import '../../models/google_book.dart';
 
+// ignore: must_be_immutable
 class Entry extends StatelessWidget {
  Entry({super.key, required this.googleBook});
 

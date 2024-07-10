@@ -7,6 +7,7 @@ import 'primary_button.dart';
 import '../../theme/theme.dart';
 import '../home.dart';
 
+// ignore: must_be_immutable
 class NewEntry extends StatefulWidget {
   NewEntry({
     super.key,
@@ -92,6 +93,8 @@ class _NewEntryState extends State<NewEntry> {
                                       initialDateController.text,
                                       finalDateController.text,
                                       commentsController.text,
+                                      
+
                                     );
                                     Navigator.pushAndRemoveUntil(
                                       context,

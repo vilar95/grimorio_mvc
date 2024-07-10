@@ -1,9 +1,8 @@
 // ignore_for_file: avoid_print
 
-import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:sqflite/sqflite.dart';
+// ignore: depend_on_referenced_packages
 import 'package:path/path.dart';
 
 import '../models/personal_book.dart';
@@ -49,6 +48,7 @@ class PersonalBookDatabase {
       await database.insert(_tableName, bookMap);
     } else {
       print("UPDATING ${book.googleBook.title}");
+      print("O ID do livro é: ${book.id}");
       await database.update(
         _tableName,
         bookMap,
