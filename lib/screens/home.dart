@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:grimorio/controller/book_controller.dart';
 import 'package:grimorio/models/personal_book.dart';
 import 'package:grimorio/screens/book_details.dart';
+import 'package:lottie/lottie.dart';
 import '../theme/theme.dart';
 import 'components/display_text.dart';
 import 'components/floating_button.dart';
@@ -155,7 +155,7 @@ class _EmptyHome extends StatelessWidget {
       ),
       Padding(
         padding: const EdgeInsets.only(bottom: 40.0),
-        child: SvgPicture.asset("assets/images/grimorio_empty.svg"),
+        child: Lottie.asset('assets/lottie/book_lottie.json'),
       ),
       Padding(
         padding: const EdgeInsets.only(bottom: 8.0),
